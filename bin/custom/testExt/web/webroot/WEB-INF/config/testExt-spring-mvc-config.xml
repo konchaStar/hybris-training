@@ -33,7 +33,6 @@
 
     <mvc:view-controller path="/login" view-name="login"/>
 
-    <!-- Tell Spring MVC how to find its jsp files -->
     <bean id="viewResolver"
           class="org.springframework.web.servlet.view.InternalResourceViewResolver">
         <property name="viewClass"
@@ -42,7 +41,6 @@
         <property name="suffix" value=".jsp"/>
     </bean>
 
-    <!-- Message sources -->
     <bean id="messageSource"
           class="org.springframework.context.support.ReloadableResourceBundleMessageSource">
         <property name="basenames">

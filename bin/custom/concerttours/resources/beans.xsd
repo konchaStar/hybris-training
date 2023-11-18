@@ -3,7 +3,6 @@
  Copyright (c) 2021 SAP SE or an SAP affiliate company. All rights reserved.
 -->
 <xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified">
-
 	<xs:element name="beans" type="abstractPojos" />
 
 	<xs:complexType name="abstractPojos">
@@ -17,8 +16,6 @@
 		<xs:attribute name="class" type="xs:string" use="required" />
 		<xs:attribute name="template" type="xs:string" use="optional" />
 	</xs:complexType>
-
-
 
 	<xs:complexType name="bean">
 		<xs:complexContent>

@@ -1,1 +1,11 @@
-<?xml version="1.0" encoding="utf-8"?><testclasses><testExt><testclass>testExt.service.impl.DefaultTestExtServiceIntegrationTest</testclass><testclass>testExt.jalo.TestExtTest</testclass></testExt></testclasses>
+<?xml version="1.0" encoding="utf-8"?>
+<testclasses>
+    <testExt>
+        <testclass>
+            testExt.service.impl.DefaultTestExtServiceIntegrationTest
+        </testclass>
+        <testclass>
+            testExt.jalo.TestExtTest
+        </testclass>
+    </testExt>
+</testclasses>
