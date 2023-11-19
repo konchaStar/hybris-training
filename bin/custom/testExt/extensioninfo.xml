@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<extensioninfo xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="extensioninfo.xsd">
+    
+    <extension abstractclassprefix="Generated" classprefix="TestExt" jaloLogicFree="true" managername="TestExtManager" managersuperclass="de.hybris.platform.jalo.extension.Extension" name="testExt" usemaven="false">
+        <coremodule generated="true" manager="testExt.jalo.TestExtManager" packageroot="testExt"/>
+        <webmodule jspcompile="false" webroot="/testExt"/>
+    </extension>
+
+</extensioninfo>
