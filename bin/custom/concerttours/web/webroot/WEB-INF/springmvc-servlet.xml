@@ -5,4 +5,8 @@ http://www.springframework.org/schema/beans ">
     <bean name="/user.html" class="concerttours.controller.UserController">
         <property name="userService" ref="userService"/>
     </bean>
+    <bean name="/product.html" class="concerttours.controller.ProductController">
+        <property name="productService" ref="productService"/>
+        <property name="catalogService" ref="catalogService"/>
+    </bean>
 </beans>
