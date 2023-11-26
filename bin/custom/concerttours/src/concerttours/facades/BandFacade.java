@@ -1,6 +1,6 @@
 package concerttours.facades;
 
-import concerttoura.data.BandData;
+import concerttours.data.BandData;
 
 import java.util.List;
 

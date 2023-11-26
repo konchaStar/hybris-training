@@ -8,21 +8,22 @@ import de.hybris.platform.servicelayer.search.FlexibleSearchService;
 import java.util.List;
 
 public class DefaultBandDao implements BandDao {
+    private static final String SELECT_ALL_QUERY = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} ";
+    private static final String SELECT_CODE_QUERY = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} "
+            + "WHERE " + "{p:" + BandModel.CODE + "}=?code ";
+    private static final String CODE_PARAM = "code";
     private FlexibleSearchService flexibleSearchService;
 
     @Override
     public List<BandModel> getBands() {
-        final String queryString = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} ";
-        FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
+        FlexibleSearchQuery query = new FlexibleSearchQuery(SELECT_ALL_QUERY);
         return flexibleSearchService.<BandModel>search(query).getResult();
     }
 
     @Override
     public List<BandModel> getBandsByCode(String code) {
-        String queryString = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} "
-                + "WHERE " + "{p:" + BandModel.CODE + "}=?code ";
-        final FlexibleSearchQuery query = new FlexibleSearchQuery(queryString);
-        query.addQueryParameter("code", code);
+        final FlexibleSearchQuery query = new FlexibleSearchQuery(SELECT_CODE_QUERY);
+        query.addQueryParameter(CODE_PARAM, code);
         return flexibleSearchService.<BandModel>search(query).getResult();
     }
 

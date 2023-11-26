@@ -4,8 +4,8 @@
 </head>
 <body>
     <h1>${user.uid}</h1>
-    <b>Name:</b> ${user.name}
+    <b>Name: ${user.name}</b>
     <br/>
-    <b>Description:</b> ${user.description}
+    <b>Description: ${user.description}</b>
 </body>
 </html>

@@ -3,6 +3,7 @@ package concerttours.controller;
 import de.hybris.platform.catalog.CatalogService;
 import de.hybris.platform.core.model.product.ProductModel;
 import de.hybris.platform.product.ProductService;
+import org.apache.commons.lang.StringUtils;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
@@ -12,6 +13,10 @@ import java.util.HashMap;
 import java.util.Map;
 
 public class ProductController implements Controller {
+    private static final String CATALOG_ID = "hwcatalog";
+    private static final String CATALOG_NAME = "Online";
+    private static final String CODE_PARAM = "code";
+    private static final String PRODUCT_ATTRIBUTE = "product";
     private CatalogService catalogService;
     private ProductService productService;
 
@@ -25,14 +30,14 @@ public class ProductController implements Controller {
 
     @Override
     public ModelAndView handleRequest(HttpServletRequest request, HttpServletResponse response) throws Exception {
-        catalogService.setSessionCatalogVersion("hwcatalog", "Online");
-        String code = request.getParameter("code");
+        catalogService.setSessionCatalogVersion(CATALOG_ID, CATALOG_NAME);
+        String code = request.getParameter(CODE_PARAM);
         ProductModel product = null;
-        if (code != null) {
+        if (!StringUtils.isBlank(code)) {
             product = productService.getProduct(code);
         }
         Map<String, Object> model = new HashMap<>();
-        model.put("product", product);
+        model.put(PRODUCT_ATTRIBUTE, product);
         return new ModelAndView("product.jsp", model);
     }
 }
