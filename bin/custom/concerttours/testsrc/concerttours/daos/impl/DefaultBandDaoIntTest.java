@@ -16,9 +16,12 @@ public class DefaultBandDaoIntTest {
     private static final String NAME = "Rock band";
     private static final String CODE = "Rock1";
     private static final String HISTORY = "history";
+
     private BandModel bandModel;
+
     @Resource
     private BandDao bandDao;
+
     @Resource
     private ModelService modelService;
 
@@ -34,6 +37,7 @@ public class DefaultBandDaoIntTest {
         Assert.assertEquals(1, bands.size());
         Assert.assertTrue(bands.contains(bandModel));
     }
+
     @Test
     public void getBandsByCode_validCode_band() {
         List<BandModel> bands = bandDao.getBandsByCode(CODE);
@@ -41,11 +45,13 @@ public class DefaultBandDaoIntTest {
         Assert.assertEquals(NAME, bands.get(0).getName());
         Assert.assertEquals(HISTORY, bands.get(0).getHistory());
     }
+
     @Test
     public void getBandsByCode_emptyCode_noBands() {
         List<BandModel> bands = bandDao.getBandsByCode("");
         Assert.assertTrue(bands.isEmpty());
     }
+
     private BandModel getBandModel() {
         BandModel bandModel = modelService.create(BandModel.class);
         bandModel.setCode(CODE);

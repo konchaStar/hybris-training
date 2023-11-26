@@ -3,7 +3,7 @@
   <title>Product</title>
 </head>
 <body>
-<h1>${product.name}</h1>
-${product.description}
+  <h1>${product.name}</h1>
+  <h5>${product.description}</h5>
 </body>
 </html>

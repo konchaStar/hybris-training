@@ -18,14 +18,18 @@ public class DefaultBandFacade implements BandFacade {
     @Override
     public List<BandData> getBands() {
         List<BandModel> models = bandService.getBands();
-        List<BandData> dataList = models.stream().map(model -> {
-            BandData data = new BandData();
-            data.setBandHistory(model.getHistory());
-            data.setCode(model.getCode());
-            data.setName(model.getName());
-            data.setSoldAlbums(model.getAlbumSales());
-            return data;
-        }).collect(Collectors.toList());
+
+        List<BandData> dataList = models.stream()
+                .map(model -> {
+                    BandData data = new BandData();
+                    data.setBandHistory(model.getHistory());
+                    data.setCode(model.getCode());
+                    data.setName(model.getName());
+                    data.setSoldAlbums(model.getAlbumSales());
+                    return data;
+                })
+                .collect(Collectors.toList());
+
         return dataList;
     }
 
