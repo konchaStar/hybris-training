@@ -2,7 +2,7 @@ package concerttours.controller;
 
 import concerttours.service.BandService;
 import io.netty.util.internal.StringUtil;
-import org.apache.maven.artifact.ant.shaded.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;

@@ -2,7 +2,7 @@ package concerttours.controller;
 
 import de.hybris.platform.core.model.user.UserModel;
 import de.hybris.platform.servicelayer.user.UserService;
-import org.apache.commons.lang.StringUtils;
+import org.apache.commons.lang3.StringUtils;
 import org.hsqldb.rights.User;
 import org.springframework.beans.factory.annotation.Required;
 import org.springframework.web.servlet.ModelAndView;

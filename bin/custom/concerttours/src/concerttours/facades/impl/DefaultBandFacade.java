@@ -5,7 +5,6 @@ import concerttours.facades.BandFacade;
 import concerttours.model.BandModel;
 import concerttours.service.BandService;
 
-import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
