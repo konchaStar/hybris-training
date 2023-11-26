@@ -17,6 +17,8 @@ public class ProductController implements Controller {
     private static final String CATALOG_NAME = "Online";
     private static final String CODE_PARAM = "code";
     private static final String PRODUCT_ATTRIBUTE = "product";
+    private static final String PRODUCT_JSP = "product.jsp";
+
     private CatalogService catalogService;
     private ProductService productService;
 
@@ -33,11 +35,13 @@ public class ProductController implements Controller {
         catalogService.setSessionCatalogVersion(CATALOG_ID, CATALOG_NAME);
         String code = request.getParameter(CODE_PARAM);
         ProductModel product = null;
+
         if (!StringUtils.isBlank(code)) {
             product = productService.getProduct(code);
         }
+
         Map<String, Object> model = new HashMap<>();
         model.put(PRODUCT_ATTRIBUTE, product);
-        return new ModelAndView("product.jsp", model);
+        return new ModelAndView(PRODUCT_JSP, model);
     }
 }

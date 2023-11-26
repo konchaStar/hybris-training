@@ -11,9 +11,10 @@ import java.util.List;
 
 @Component("bandDao")
 public class DefaultBandDao implements BandDao {
-    private static final String SELECT_ALL_QUERY = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} ";
-    private static final String SELECT_CODE_QUERY = "SELECT {p:" + BandModel.PK + "} FROM {" + BandModel._TYPECODE + " AS p} "
-            + "WHERE " + "{p:" + BandModel.CODE + "}=?code ";
+    private static final String SELECT_ALL_QUERY = "SELECT {p:" + BandModel.PK + "}" +
+            " FROM {" + BandModel._TYPECODE + " AS p} ";
+    private static final String SELECT_CODE_QUERY = "SELECT {p:" + BandModel.PK + "}" +
+            " FROM {" + BandModel._TYPECODE + " AS p} WHERE{p:" + BandModel.CODE + "}=?code ";
     private static final String CODE_PARAM = "code";
     @Autowired
     private FlexibleSearchService flexibleSearchService;

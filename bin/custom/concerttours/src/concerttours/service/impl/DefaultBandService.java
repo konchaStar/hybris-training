@@ -27,12 +27,15 @@ public class DefaultBandService implements BandService {
     @Override
     public BandModel getBandByCode(String code) {
         List<BandModel> bands = bandDao.getBandsByCode(code);
+
         if (bands.size() > 1) {
             throw new AmbiguousIdentifierException(String.format(NOT_UNIQUE_ERROR, code, bands.size()));
         }
+
         if (CollectionUtils.isEmpty(bands)) {
             throw new UnknownIdentifierException(String.format(NOT_FOUND_ERROR, code));
         }
+
         return bands.get(0);
     }
 }
