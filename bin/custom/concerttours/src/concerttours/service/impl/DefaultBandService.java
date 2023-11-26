@@ -9,6 +9,7 @@ import de.hybris.platform.servicelayer.exceptions.UnknownIdentifierException;
 import java.util.List;
 
 public class DefaultBandService implements BandService {
+
     private BandDao bandDao;
 
     public void setBandDao(BandDao bandDao) {
