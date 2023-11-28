@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="ISO-8859-1"?>
 
-<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" 
-			xsi:noNamespaceSchemaLocation="items.xsd">
+<items 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 	<collectiontypes>
 		<collectiontype code="SongCollection" elementtype="Song" autocreate="true" generate="false"/>
 	</collectiontypes>
+
 	<enumtypes>
 		<enumtype code="ConcertType" autocreate="true" generate="true" dynamic="false">
 			<value code="openair" />
@@ -14,9 +14,11 @@
 		<enumtype code="MusicType" autocreate="true" generate="true" dynamic="true">
 		</enumtype>
 	</enumtypes>
+
 	<maptypes>
 		<maptype code="PopularSongs" argumenttype="Band" returntype="Song" autocreate="true"/>
 	</maptypes>
+
 	<relations>
 		<relation code="Product2RockBand" autocreate="true" generate="false" localized="false">
 			<sourceElement qualifier="tours" type="Product" collectiontype="set" cardinality="many" ordered="false">
@@ -26,6 +28,7 @@
 				<modifiers read="true" write="true" search="true" optional="true" />
 			</targetElement>
 		</relation>
+
 		<relation code="Band2MusicType" autocreate="true" generate="false" localized="false">
 			<deployment table="Band2MusicType" typecode="30269" />
 			<sourceElement qualifier="bands" type="Band" collectiontype="set" cardinality="many" ordered="false">
@@ -36,6 +39,7 @@
 			</targetElement>
 		</relation>
 	</relations>
+
 	<itemtypes>
 		<itemtype generate="true" code="Product" autocreate="false">
 			<attributes>
@@ -45,6 +49,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
 		<itemtype generate="true" code="Band" autocreate="true">
 			<deployment table="Bands" typecode="30268" />
 			<attributes>
@@ -66,6 +71,25 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
+		<itemtype code="ClientName" extends="GenericItem" autocreate="true" generate="false">
+			<deployment table="Names" typecode="30280"/>
+			<attributes>
+				<attribute autocreate="true" qualifier="firstName" type="java.lang.String">
+					<modifiers read="true" write="true" search="false" optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute autocreate="true" qualifier="lastName" type="java.lang.String">
+					<modifiers read="true" write="true" search="false" optional="true" />
+					<persistence type="property" />
+				</attribute>
+				<attribute type="java.lang.String" qualifier="longName">
+					<persistence type="dynamic" attributeHandler="dynamicAttributesStringSample"/>
+					<modifiers read="true" write="true" optional="true" unique="false"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
 		<itemtype generate="true" code="Concert" extends="VariantProduct" autocreate="true">
 			<attributes>
 				<attribute qualifier="venue" type="java.lang.String">
@@ -82,6 +106,7 @@
 				</attribute>
 			</attributes>
 		</itemtype>
+
 		<itemtype code="Song" autocreate="true" generate="false">
 			<deployment table="Songs" typecode="30267" />
 			<attributes>
