@@ -90,6 +90,18 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype generate="true" code="Token" autocreate="true">
+			<deployment table="Tokens" typecode="30300"/>
+			<attributes>
+				<attribute qualifier="token" type="java.lang.String">
+					<persistence type="property"/>
+				</attribute>
+			</attributes>
+		</itemtype>
+
+		<itemtype generate="true" code="TokenCronJob" extends="CronJob" autocreate="true">
+		</itemtype>
+
 		<itemtype generate="true" code="Concert" extends="VariantProduct" autocreate="true">
 			<attributes>
 				<attribute qualifier="venue" type="java.lang.String">

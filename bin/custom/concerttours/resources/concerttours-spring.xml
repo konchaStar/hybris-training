@@ -20,4 +20,10 @@
 
     <bean id="dynamicAttributesStringSample" class="concerttours.dynamicattributeshandlers.DynamicAttributesStringSample"/>
 
+    <bean id="tokenJobPerformable" class="concerttours.cjperform.TokenPerformable"
+          parent="abstractJobPerformable">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
 </beans>

@@ -19,7 +19,7 @@ public class BandController implements Controller {
     private static final String BAND_ATTRIBUTE = "band";
     private static final String BANDS_ATTRIBUTE = "bands";
     private static final String BAND_JSP = "band.jsp";
-    private static final String BANDS_JSP = "BANDS.JSP";
+    private static final String BANDS_JSP = "bands.jsp";
 
     private BandService bandService;
 
