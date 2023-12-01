@@ -141,6 +141,9 @@
 			</attributes>
 		</itemtype>
 
+		<itemtype generate="true" code="SendNewsCronJob" extends="CronJob" autocreate="true">
+		</itemtype>
+
 		<itemtype code="Song" autocreate="true" generate="false">
 			<deployment table="Songs" typecode="30267" />
 			<attributes>

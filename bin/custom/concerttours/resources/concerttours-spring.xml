@@ -39,4 +39,16 @@
         <property name="typeCode" value="Band"/>
     </bean>
 
+    <bean id="newsDao" class="concerttours.daos.impl.DefaultNewsDao">
+        <property name="flexibleSearchService" ref="flexibleSearchService"/>
+    </bean>
+
+    <bean id="newsService" class="concerttours.service.impl.DefaultNewsService">
+        <property name="newsDao" ref="newsDao"/>
+    </bean>
+    <bean id="sendNewsJobPerformable" class="concerttours.cjperform.SendNewsPerformable"
+        parent="abstractJobPerformable">
+        <property name="newsService" ref="newsService"/>
+        <property name="configurationService" ref="configurationService"/>
+    </bean>
 </beans>
