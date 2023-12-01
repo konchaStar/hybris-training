@@ -26,4 +26,6 @@
         <property name="modelService" ref="modelService"/>
     </bean>
 
+    <bean id="daysUntilConcertDynamicAttributeHandler" class="concerttours.dynamicattributeshandlers.DaysUntilConcertDynamicAttributeHandler"/>
+
 </beans>
