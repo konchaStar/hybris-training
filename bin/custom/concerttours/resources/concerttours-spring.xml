@@ -28,4 +28,8 @@
 
     <bean id="daysUntilConcertDynamicAttributeHandler" class="concerttours.dynamicattributeshandlers.DaysUntilConcertDynamicAttributeHandler"/>
 
+    <bean id="concerttourEventListener" class="concerttours.events.NewBandEventListener" parent="abstractEventListener">
+        <property name="modelService" ref="modelService"/>
+    </bean>
+
 </beans>

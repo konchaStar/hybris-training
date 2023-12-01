@@ -8,13 +8,14 @@ import javax.annotation.Nonnull;
 import java.time.Duration;
 import java.time.ZoneId;
 import java.time.ZonedDateTime;
+import java.util.Objects;
 import java.util.Optional;
 
 @Component
 public class DaysUntilConcertDynamicAttributeHandler extends AbstractDynamicAttributeHandler<Optional<Long>, ConcertModel> {
     @Override
     public Optional<Long> get(@Nonnull ConcertModel model) {
-        if (model.getDate() == null) {
+        if (Objects.nonNull(model.getDate())) {
             return Optional.empty();
         }
 
