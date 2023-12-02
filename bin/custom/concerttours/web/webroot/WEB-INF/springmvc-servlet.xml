@@ -11,8 +11,13 @@ http://www.springframework.org/schema/beans ">
         <property name="bandDao" ref="bandDao"/>
     </bean>
 
+    <bean id="bandFacade" class="concerttours.facades.impl.DefaultBandFacade">
+        <property name="bandService" ref="bandService" />
+        <property name="mediaService" ref="mediaService" />
+    </bean>
+
     <bean name="/bands.html" class="concerttours.controller.BandController">
-        <property name="bandService" ref="bandService"/>
+        <property name="bandFacade" ref="bandFacade"/>
     </bean>
 
     <bean name="/user.html" class="concerttours.controller.UserController">

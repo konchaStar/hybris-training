@@ -5,10 +5,11 @@
     <title>Band</title>
 </head>
 <body>
+<img src="${band.imageUrl}"><br>
 <h1>${band.name}</h1>
 <span>
-    Album sales: ${band.albumSales}<br>
-    History: ${band.history}<br>
+    Album sales: ${band.soldAlbums}<br>
+    History: ${band.bandHistory}<br>
 </span>
 </body>
 </html>
