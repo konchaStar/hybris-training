@@ -5,7 +5,6 @@
 		<path dir="${HYBRIS_BIN_DIR}" />
 
 		<extension dir="../custom/concerttours"/>
-<!--		<extension dir="../custom/testExt"/>-->
 		<extension name="platformbackoffice" />
 
 	</extensions>
