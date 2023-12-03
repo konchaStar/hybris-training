@@ -25,9 +25,10 @@ public class BandInterceptor implements ValidateInterceptor, PrepareInterceptor 
         if (object instanceof BandModel) {
             BandModel band = (BandModel) object;
 
-            if(band.getAlbumSales() > BIG_ALBUM_SALES) {
+            if (band.getAlbumSales() > BIG_ALBUM_SALES) {
                 eventService.publishEvent(new BandAlbumSalesEvent(band.getName(), band.getAlbumSales()));
             }
+
         }
     }
 
@@ -40,6 +41,7 @@ public class BandInterceptor implements ValidateInterceptor, PrepareInterceptor 
             if (Objects.nonNull(sales) && sales < 0L) {
                 throw new InterceptorException(NEGATIVE_ERROR);
             }
+
         }
     }
 
