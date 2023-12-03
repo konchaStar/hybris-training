@@ -21,9 +21,9 @@ public class BandInterceptor implements ValidateInterceptor, PrepareInterceptor 
     private EventService eventService;
 
     @Override
-    public void onPrepare(Object o, InterceptorContext interceptorContext) throws InterceptorException {
-        if (o instanceof BandModel) {
-            BandModel band = (BandModel) o;
+    public void onPrepare(Object object, InterceptorContext interceptorContext) throws InterceptorException {
+        if (object instanceof BandModel) {
+            BandModel band = (BandModel) object;
 
             if(band.getAlbumSales() > BIG_ALBUM_SALES) {
                 eventService.publishEvent(new BandAlbumSalesEvent(band.getName(), band.getAlbumSales()));
@@ -32,9 +32,9 @@ public class BandInterceptor implements ValidateInterceptor, PrepareInterceptor 
     }
 
     @Override
-    public void onValidate(Object o, InterceptorContext interceptorContext) throws InterceptorException {
-        if (o instanceof BandModel) {
-            BandModel band = (BandModel) o;
+    public void onValidate(Object object, InterceptorContext interceptorContext) throws InterceptorException {
+        if (object instanceof BandModel) {
+            BandModel band = (BandModel) object;
             Long sales = band.getAlbumSales();
 
             if (Objects.nonNull(sales) && sales < 0L) {
