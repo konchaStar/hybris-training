@@ -51,7 +51,7 @@ public class DefaultBandFacade implements BandFacade {
 
     private String getImageUrl(MediaContainerModel container, MediaFormatModel format) {
 
-        if(Objects.nonNull(container)) {
+        if (Objects.nonNull(container)) {
             return mediaService.getMediaByFormat(container, format).getDownloadURL();
         }
 
@@ -71,7 +71,10 @@ public class DefaultBandFacade implements BandFacade {
         bandData.setImageUrl(getImageUrl(bandModel.getImage(), format));
 
         ProducerModel producer = bandModel.getProducer();
-        bandData.setProducer(String.format("%s %s"), producer.getName(), producer.getSurname());
+
+        if (!Objects.nonNull(producer)) {
+            bandData.setProducer(String.format("%s %s", producer.getName(), producer.getSurname()));
+        }
 
         return bandData;
     }
