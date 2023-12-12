@@ -3,6 +3,7 @@ package concerttours.facades.impl;
 import concerttours.data.BandData;
 import concerttours.facades.BandFacade;
 import concerttours.model.BandModel;
+import concerttours.model.ProducerModel;
 import concerttours.service.BandService;
 import de.hybris.platform.core.model.media.MediaContainerModel;
 import de.hybris.platform.core.model.media.MediaFormatModel;
@@ -50,7 +51,7 @@ public class DefaultBandFacade implements BandFacade {
 
     private String getImageUrl(MediaContainerModel container, MediaFormatModel format) {
 
-        if(Objects.nonNull(container)) {
+        if (Objects.nonNull(container)) {
             return mediaService.getMediaByFormat(container, format).getDownloadURL();
         }
 
@@ -68,6 +69,12 @@ public class DefaultBandFacade implements BandFacade {
         bandData.setName(bandModel.getName());
         bandData.setSoldAlbums(bandModel.getAlbumSales());
         bandData.setImageUrl(getImageUrl(bandModel.getImage(), format));
+
+        ProducerModel producer = bandModel.getProducer();
+
+        if (!Objects.nonNull(producer)) {
+            bandData.setProducer(String.format("%s %s", producer.getName(), producer.getSurname()));
+        }
 
         return bandData;
     }

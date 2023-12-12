@@ -6,5 +6,6 @@
         <property name="bandHistory" type="String"/>
         <property name="soldAlbums" type="Long"/>
         <property name="imageUrl" type="String"/>
+        <property name="producer" type="String"/>
     </bean>
 </beans>

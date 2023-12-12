@@ -11,6 +11,7 @@
 <span>
     <spring:message code="text.album.sales"/>: ${band.soldAlbums}<br>
     <spring:message code="text.history"/>: ${band.bandHistory}<br>
+    <spring:message code="text.producer"/>: ${band.getProducer}<br>
 </span>
 <a href="${pageContext.servletContext.contextPath}/bands.html">
     <spring:message code="text.back"/>
