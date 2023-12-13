@@ -104,6 +104,17 @@
 
 		<itemtype generate="true" code="News" autocreate="true">
 			<deployment table="News" typecode="30301"/>
+			<custom-properties>
+				<property name="catalogItemType">
+					<value>java.lang.Boolean.TRUE</value>
+				</property>
+				<property name="catalogVersionAttributeQualifier">
+					<value>"catalogVersion"</value>
+				</property>
+				<property name="uniqueKeyAttributeQualifier">
+					<value>"headline"</value>
+				</property>
+			</custom-properties>
 			<attributes>
 				<attribute qualifier="date" type="java.util.Date">
 					<description>date of news item</description>
@@ -112,6 +123,7 @@
 				<attribute qualifier="headline" type="java.lang.String">
 					<description>short headline for the news item</description>
 					<persistence type="property"/>
+					<modifiers read="true" write="true" search="true" optional="false" unique="true"/>
 				</attribute>
 				<attribute qualifier="content" type="java.lang.String">
 					<description>fuller description of the news item</description>
