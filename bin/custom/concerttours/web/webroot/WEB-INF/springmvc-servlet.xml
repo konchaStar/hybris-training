@@ -29,4 +29,7 @@ http://www.springframework.org/schema/beans ">
         <property name="catalogService" ref="catalogService"/>
     </bean>
 
+    <bean name="/news.html" class="concerttours.controller.NewsController">
+        <property name="newsService" ref="newsService"/>
+    </bean>
 </beans>
