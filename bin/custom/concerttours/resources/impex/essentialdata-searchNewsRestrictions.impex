@@ -1,0 +1,2 @@
+INSERT_UPDATE SearchRestriction;code[unique=true];query;restrictedType(code);active;generate
+;OnlineCatalogVersionRestriction;{catalogVersion} IN ({{SELECT {cv:PK} FROM {CatalogVersion AS cv} WHERE {cv:version} = 'Online'}});News;true;true
